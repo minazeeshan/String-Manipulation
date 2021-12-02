@@ -1,2 +1,2 @@
-# String-Mnaipulation
+# String-Manipulation
 string manipulation marked assignments
