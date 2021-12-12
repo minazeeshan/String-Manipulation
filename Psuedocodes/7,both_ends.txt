@@ -1,0 +1,16 @@
+DECLARE s, Last2, First2, Str : STRING
+
+s <- ""
+Last2 <- ""
+First2 <- ""
+Str <- ""
+
+INPUT "Enter String to Process : ",s
+First2 <- LEFT(s,2)
+Last2 <- RIGHT(s,2)
+Str <- First2 & Last2
+IF LEN(s) < 2 THEN
+   OUTPUT "String is not of sufficient length : ",s
+ELSE
+   OUTPUT "String after process is ",Str
+END IF

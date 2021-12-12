@@ -1,0 +1,23 @@
+DECLARE Str1, Str2 : STRING
+DECLARE thisChar, selectedChar, desiredChar : CHARACTER
+DECLARE i :  INTEGER
+
+Str1 <- ""
+Str2 <- ""
+thisChar <- ''
+selectedChar <- ''
+desiredChar <- ''
+i <- 0
+
+INPUT "Enter String to process : ", Str1
+INPUT "Enter string to remove : ", selectedChar 
+INPUT "Enter string to replace it with : ", desiredChar
+FOR i <- 1 to LEN(Str1)
+   thisChar <- MID(Str1, i, 1)
+   IF thisChar = desiredChar THEN
+      Str2 <- Str2 & desiredChar
+   ELSE IF
+      Str2 <- Str2 & thisChar
+   ENDIF
+NEXT
+OUTPUT "String after replacing selected character with another is : ", Str2

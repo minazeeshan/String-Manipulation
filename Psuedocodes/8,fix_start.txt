@@ -1,0 +1,23 @@
+DECLARE s, str2 : STRING
+DECLARE thisChar, FirstChar : CHARACTER
+DECLARE i : INTEGER
+
+s <- ""
+i <- 0
+thisChar <- ''
+FirstChar <- ''
+str2 <- ""
+
+INPUT "Enter string to process : ",s
+s <- LOWER(s)
+FirstChar <- LEFT(s,1)
+str2 <- LEFT(s,1)
+FOR i <- 2 TO LEN(s)
+   thisChar = MID(s,i,1)
+   IF thisChar = FirstChar THEN
+      str2 <- str2 & '*'
+   ELSE
+      str2 <- str2 & thisChar
+   END IF
+NEXT
+OUTPUT "String after process is ", str2

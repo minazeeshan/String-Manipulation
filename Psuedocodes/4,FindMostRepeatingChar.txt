@@ -1,0 +1,29 @@
+DECLARE str1 : STRING
+DECLARE i, c, high, charCount : INTEGER
+DECLARE thisChar, Char2, mostRepeating : CHARACTER
+
+str1 = ""
+c <- 0
+i <- 0
+high <- 0
+thisChar <- ''
+Char2 <- ''
+mostRepeating <- ''
+
+INPUT "Enter string to fing most appearing character of : ", str1
+str1 <- LOWER(str1)
+FOR i <- 1 TO LEN(str1)
+   charCount <- 1
+   thisChar <- MID(str1, i, 1)
+   FOR c <- 2 TO LEN(str1)
+      Char2 <- MID(str1, c, 1)
+      IF Char2 = thisChar THEN
+         charCount <- charCount + 1
+      END IF
+   NEXT
+   IF charCount > high THEN 
+      high <- charCount
+      mostRepeating <- thisChar
+   END IF
+NEXT
+OUTPUT "Character that appears most number of times in the entered string is ", mostRepeating

@@ -1,0 +1,20 @@
+DECLARE before, after, str1, str2 : STRING
+DECLARE notPos, badPos : INTEGER
+
+before <- ""
+str1 <- ""
+after <- ""
+notPos <- 0
+badPos <- 0
+str2 <- ""
+
+INPUT"Enter string to process : ",str1
+str1 <- LOWER(str1)
+notPos <- LOCATE (str1, "not")
+badPos <- LOCATE (str1, "bad")
+IF notPos < badPos THEN
+   before <- LEFT(str1, notPos-1)
+   after <- RIGHT(str1, LEN(str1)-(badPos+2))
+   str2 <- before & "good" & after
+END IF
+OUTPUT "String after process is : ", str2

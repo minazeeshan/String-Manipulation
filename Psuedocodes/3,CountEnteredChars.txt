@@ -1,0 +1,38 @@
+DECLARE Str1, Alpha : STRING
+DECLARE thisChar, myChar, CharToCount : CHARACTER
+DECLARE i, c, Num, NumCount, AlphaCount,otherCharCount,countChar : INTEGER
+
+Alpha <- "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
+Num <- "0123456789"
+i <- 0
+Str1 <- ""
+otherCharCount <- 0
+thisChar <- ''
+NumCount <- 0
+AlphaCount <- 0
+countChar <- 0
+c <- 0
+CharToCount <- '' 
+myChar = ''
+
+INPUT "Enter string to count characters of : ",Str1
+INPUT "Enter which character you want to count : ",CharToCount
+FOR c <- 1 TO LEN(Str1)
+   myChar <- MID(Str1,c,1)
+   IF myChar = CharToCount THEN
+      countChar = countChar + 1
+   END IF
+NEXT
+FOR i <- 1 TO LEN(Str1)
+   thisChar <- MID (Str1, i, 1)
+   IF LOCATE(Alpha, thisChar) <> 0 THEN
+      AlphaCount <- AlphaCount + 1
+   ELSE IF LOCATE(Num, thisChar) <> 0 THEN
+      NumCount <- NumCount + 1
+   ELSE 
+      otherCharCount <- otherCharCount + 1
+   END IF
+NEXT
+OUTPUT "Number of alphabets in string are ", AlphaCount
+OUTPUT "Number of digits in string are ", NumCount
+OUTPUT "Number of other characters in string are ", otherCharCount

@@ -1,0 +1,16 @@
+DECLARE str1, str2 : STRING
+
+str1 <- ""
+str2 <- ""
+
+INPUT "Enter string to process : ", str1
+IF LEN(str1) > 2 THEN
+   IF RIGHT (str1,3) <> "ing" THEN
+      str2 <- str1 & "ing"
+   ELSE
+      str2 <- str1 & "ly"
+   END IF
+ELSE 
+   str2 <- str1
+END IF
+OUTPUT "String after process is ", str2

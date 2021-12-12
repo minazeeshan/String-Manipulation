@@ -1,0 +1,10 @@
+DECLARE donutCount : INTEGER
+
+donutCount <- 0
+
+INPUT "Enter Number of Donuts : ",donutCount
+IF donutCount < 10 THEN
+   OUTPUT "Number of Donuts : ", donutCount
+ELSE 
+   OUTPUT "Number of Donuts : many"
+END IF

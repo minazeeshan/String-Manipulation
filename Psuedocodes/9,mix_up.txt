@@ -1,0 +1,20 @@
+DECLARE a, b, aFirst2, bFirst2, FinalString : STRING
+
+a <- ""
+b <- ""
+aFirst2 <- ""
+bFirst2 <- ""
+FinalString <- ""
+
+INPUT "Enter first string : ", a
+INPUT "Enter second string : ", b
+IF LEN(a) > 1 AND LEN(b) > 1 THEN
+   aFirst2 <-LEFT(a,2)
+   bFirst2 <-LEFT(b,2)
+   a <- bFirst2 & RIGHT(a, LEN(a) - 2)
+   b <- aFirst2 & RIGHT(b, LEN(b) - 2)
+   FinalString <- a & ' ' & b
+   OUPUT "Both strings merged after process : ", FinalString
+ELSE
+   OUTPUT "Strings input not of sufficient length"
+END IF

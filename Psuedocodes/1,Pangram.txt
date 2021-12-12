@@ -1,0 +1,25 @@
+DECLARE Str1,Alphabets : STRING
+DECLARE thisChar : CHARACTER
+DECLARE i : INTEGER
+DECLARE isAlphabet : BOOLEAN
+
+Str1 <- ""
+Alphabets <- ""
+thisChar <- ''
+i <- 0
+isAlphabet <- TRUE
+
+INPUT "Enter string to check alphabets from : ", Str1
+Str1 <- UPPER(Str1) 
+FOR i <- 1 TO Len(Str1)
+   thisChar <- MID(Str1, i, 1)
+   IF LOCATE(Alphabets, thisChar) = 0 THEN
+      isAlphabet <- FALSE
+      EXIT FOR
+   END IF
+NEXT
+IF isAlphabet = TRUE THEN
+   OUTPUT "String has all alphabets"
+ELSE 
+   OUTPUT "String does not have all alphabets"
+END IF
